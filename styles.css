@@ -1,0 +1,130 @@
+body {
+  font-family: "Baloo 2", cursive;
+  background: linear-gradient(135deg, #ffe6f7 0%, #c3d9ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+#rps-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  border: 3px solid #ffc8dd;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ff80b5;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #ff80b5;
+  background-color: #ffe6f7;
+  font-size: 1.2rem;
+  color: #ff80b5;
+  cursor: pointer;
+  width: 100%;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ff99cc;
+}
+
+/* Button styling */
+button {
+  background-color: #c3d9ff;
+  border: 2px solid #a8d1ff;
+  color: #5b8def;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #a8d1ff;
+  border-color: #ffc8dd;
+}
+
+#results {
+  background: #ffc8dd;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #ff80b5;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+#results p {
+  margin: 10px 0;
+}
+
+/* Cute emoji for the results */
+#results strong {
+  font-size: 1.3rem;
+  color: #ff80b5;
+}
+
+/* Bubble animations to make it more fun */
+@keyframes bubble {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#results p {
+  animation: bubble 0.5s ease;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  #rps-form {
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  select,
+  button {
+    font-size: 1rem; 
+  }
+
+  button {
+    padding: 8px 16px; 
+  }
+
+  #results {
+    font-size: 1.1rem; 
+    padding: 10px; 
+  }
+}
