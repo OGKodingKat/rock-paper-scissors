@@ -30,7 +30,6 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 
-// Step 5: Update the HTML div with funny results
 const displayResults = (userChoice, computerChoice, winner) => {
   const resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = `
