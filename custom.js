@@ -85,3 +85,13 @@ function displayResultMessage(message) {
   }
 }
 
+document.getElementById("rps-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent page refresh
+
+  const userChoice = document.getElementById("user-choice").value;
+  const choices = ["rock", "paper", "scissors"];
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+  const resultMessage = determineWinner(userChoice, computerChoice);
+  displayResultMessage(resultMessage);
+});
