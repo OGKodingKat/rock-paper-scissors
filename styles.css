@@ -7,18 +7,6 @@
   margin: 8px 0;
 }
 
-
-body.fade {
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-}
-body.default,
-body.cotton,
-body.space,
-body.retro {
-  transition: opacity 0.2s ease-in;
-}
-
 body {
   display: flex;
   justify-content: center;
@@ -27,6 +15,11 @@ body {
   margin: 0;
   padding: 10px;
   transition: all 0.3s ease;
+}
+
+body.fade {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
 }
 
 #rps-form {
@@ -43,8 +36,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-select,
-button {
+select, button {
   padding: 10px;
   border-radius: 12px;
   font-size: 1.2rem;
@@ -78,7 +70,14 @@ button {
   }
 }
 
-/* ========== DEFAULT THEME (Black & White) ========== */
+/* ========== THEME BASE STYLES ========== */
+body.default, body.cotton, body.space, body.retro {
+  transition: opacity 0.2s ease-in;
+}
+
+/* ========== THEME SPECIFIC STYLES ========== */
+
+/* Default Theme */
 body.default {
   font-family: sans-serif;
   background: #ffffff;
@@ -90,8 +89,7 @@ body.default #rps-form {
   border: 2px solid #cccccc;
 }
 
-body.default select,
-body.default button {
+body.default select, body.default button {
   background-color: #ffffff;
   border: 2px solid #333;
   color: #000;
@@ -102,7 +100,7 @@ body.default #results {
   color: #000;
 }
 
-/* ========== COTTON THEME ========== */
+/* Cotton Theme */
 body.cotton {
   font-family: "Baloo 2", cursive;
   background: linear-gradient(135deg, #ffe6f7 0%, #c3d9ff 100%);
@@ -145,11 +143,7 @@ body.cotton #results {
   color: #ff80b5;
 }
 
-body.cotton #results strong {
-  color: #ff80b5;
-}
-
-/* ========== SPACE THEME ========== */
+/* Space Theme */
 body.space {
   font-family: "Orbitron", sans-serif;
   background: radial-gradient(circle at top, #0d0d2b 0%, #000 80%);
@@ -166,8 +160,7 @@ body.space h2 {
   color: #00ffff;
 }
 
-body.space select,
-body.space button {
+body.space select, body.space button {
   background-color: #0f1b2b;
   border: 2px solid #00ffff;
   color: #00ffff;
@@ -183,7 +176,7 @@ body.space #results {
   color: #00ffff;
 }
 
-/* ========== RETRO THEME ========== */
+/* Retro Theme */
 body.retro {
   font-family: "Press Start 2P", cursive;
   background: linear-gradient(135deg, #ff00cc, #3333ff);
@@ -200,8 +193,7 @@ body.retro h2 {
   color: #fffc00;
 }
 
-body.retro select,
-body.retro button {
+body.retro select, body.retro button {
   background-color: #222;
   border: 2px solid #fffc00;
   color: #fffc00;
@@ -234,8 +226,7 @@ body.retro #results {
     font-size: 1.8rem;
   }
 
-  select,
-  button {
+  select, button {
     font-size: 1rem;
   }
 
@@ -247,4 +238,20 @@ body.retro #results {
     font-size: 1.1rem;
     padding: 10px;
   }
+}
+
+/* ========== THEME SWITCH BUTTON ========== */
+#theme-submit {
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+#theme-submit:hover {
+  background-color: #ddd;
+  border-color: #333;
 }
