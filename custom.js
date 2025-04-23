@@ -77,3 +77,11 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 
+// Function to display the result message
+function displayResultMessage(message) {
+  const resultElement = document.getElementById("result-message");
+  if (resultElement) {
+    resultElement.textContent = message;
+  }
+}
+
