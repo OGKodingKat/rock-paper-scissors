@@ -1,6 +1,10 @@
 const determineWinner = (userChoice, computerChoice) => {
-  const theme = document.body.className;
+  // Get the theme class name, specifically looking for theme-related classes
+  const theme = document.body.classList.contains('cotton-theme') ? 'cotton-theme' :
+                document.body.classList.contains('space-theme') ? 'space-theme' :
+                document.body.classList.contains('retro-theme') ? 'retro-theme' : 'default';
 
+  // Themed messages object
   const themedMessages = {
     default: {
       draw: `Wow, you both chose ${userChoice}. It's a draw!`,
@@ -24,24 +28,26 @@ const determineWinner = (userChoice, computerChoice) => {
     },
   };
 
+  // Get messages for the active theme
   const messages = themedMessages[theme] || themedMessages.default;
 
+  // Check if the game is a draw
   if (userChoice === computerChoice) {
-    playSound("draw");
+    playSound("draw"); // Make sure this function exists elsewhere in your code
     return messages.draw;
   }
 
+  // Determine if the user won
   const win =
     (userChoice === "rock" && computerChoice === "scissors") ||
     (userChoice === "scissors" && computerChoice === "paper") ||
     (userChoice === "paper" && computerChoice === "rock");
 
   if (win) {
-    playSound("win");
+    playSound("win"); // Ensure win sound is defined
     return messages.win;
   } else {
-    playSound("lose");
+    playSound("lose"); // Ensure lose sound is defined
     return messages.lose;
   }
 };
-
