@@ -1,88 +1,64 @@
+/* ========== BASE STYLES ========== */
+
+body.fade {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+body.default,
+body.cotton,
+body.space,
+body.retro {
+  transition: opacity 0.2s ease-in;
+}
+
 body {
-  font-family: "Baloo 2", cursive;
-  background: linear-gradient(135deg, #ffe6f7 0%, #c3d9ff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   padding: 10px;
+  transition: all 0.3s ease;
 }
 
 #rps-form {
-  background: #fff;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 300px;
-  border: 3px solid #ffc8dd;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
 h2 {
   font-size: 2rem;
-  color: #ff80b5;
   margin-bottom: 20px;
 }
 
-select {
+select,
+button {
   padding: 10px;
   border-radius: 12px;
-  border: 2px solid #ff80b5;
-  background-color: #ffe6f7;
-  font-size: 1.2rem;
-  color: #ff80b5;
-  cursor: pointer;
-  width: 100%;
-}
-
-select:focus {
-  outline: none;
-  border-color: #ff99cc;
-}
-
-/* Button styling */
-button {
-  background-color: #c3d9ff;
-  border: 2px solid #a8d1ff;
-  color: #5b8def;
-  padding: 10px 20px;
-  border-radius: 15px;
   font-size: 1.2rem;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
   width: 100%;
-}
-
-button:hover {
-  background-color: #a8d1ff;
-  border-color: #ffc8dd;
+  transition: all 0.3s ease;
 }
 
 #results {
-  background: #ffc8dd;
   margin-top: 20px;
   padding: 15px;
   border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  color: #ff80b5;
   font-size: 1.2rem;
   line-height: 1.5;
+  transition: all 0.3s ease;
 }
 
 #results p {
   margin: 10px 0;
+  animation: bubble 0.5s ease;
 }
 
-/* Cute emoji for the results */
-#results strong {
-  font-size: 1.3rem;
-  color: #ff80b5;
-}
-
-/* Bubble animations to make it more fun */
 @keyframes bubble {
   0% {
     transform: scale(0.8);
@@ -94,10 +70,146 @@ button:hover {
   }
 }
 
-#results p {
-  animation: bubble 0.5s ease;
+/* ========== DEFAULT THEME (Black & White) ========== */
+body.default {
+  font-family: sans-serif;
+  background: #ffffff;
+  color: #000000;
 }
 
+body.default #rps-form {
+  background: #f0f0f0;
+  border: 2px solid #cccccc;
+}
+
+body.default select,
+body.default button {
+  background-color: #ffffff;
+  border: 2px solid #333;
+  color: #000;
+}
+
+body.default #results {
+  background: #e0e0e0;
+  color: #000;
+}
+
+/* ========== COTTON THEME ========== */
+body.cotton {
+  font-family: "Baloo 2", cursive;
+  background: linear-gradient(135deg, #ffe6f7 0%, #c3d9ff 100%);
+  color: #ff80b5;
+}
+
+body.cotton #rps-form {
+  background: #fff;
+  border: 3px solid #ffc8dd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.cotton h2 {
+  color: #ff80b5;
+}
+
+body.cotton select {
+  border: 2px solid #ff80b5;
+  background-color: #ffe6f7;
+  color: #ff80b5;
+}
+
+body.cotton select:focus {
+  border-color: #ff99cc;
+}
+
+body.cotton button {
+  background-color: #c3d9ff;
+  border: 2px solid #a8d1ff;
+  color: #5b8def;
+}
+
+body.cotton button:hover {
+  background-color: #a8d1ff;
+  border-color: #ffc8dd;
+}
+
+body.cotton #results {
+  background: #ffc8dd;
+  color: #ff80b5;
+}
+
+body.cotton #results strong {
+  color: #ff80b5;
+}
+
+/* ========== SPACE THEME ========== */
+body.space {
+  font-family: "Orbitron", sans-serif;
+  background: radial-gradient(circle at top, #0d0d2b 0%, #000 80%);
+  color: #00ffff;
+}
+
+body.space #rps-form {
+  background: #111122;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff55;
+}
+
+body.space h2 {
+  color: #00ffff;
+}
+
+body.space select,
+body.space button {
+  background-color: #0f1b2b;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+}
+
+body.space button:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
+body.space #results {
+  background: #001f3f;
+  color: #00ffff;
+}
+
+/* ========== RETRO THEME ========== */
+body.retro {
+  font-family: "Press Start 2P", cursive;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  color: #fffc00;
+}
+
+body.retro #rps-form {
+  background: #111;
+  border: 3px dashed #fffc00;
+  box-shadow: 0 0 15px #ff00cc;
+}
+
+body.retro h2 {
+  color: #fffc00;
+}
+
+body.retro select,
+body.retro button {
+  background-color: #222;
+  border: 2px solid #fffc00;
+  color: #fffc00;
+}
+
+body.retro button:hover {
+  background-color: #fffc00;
+  color: #111;
+}
+
+body.retro #results {
+  background: #000;
+  color: #fffc00;
+}
+
+/* ========== Responsive ========== */
 @media (max-width: 480px) {
   body {
     padding: 20px;
@@ -116,15 +228,15 @@ button:hover {
 
   select,
   button {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   button {
-    padding: 8px 16px; 
+    padding: 8px 16px;
   }
 
   #results {
-    font-size: 1.1rem; 
-    padding: 10px; 
+    font-size: 1.1rem;
+    padding: 10px;
   }
 }
