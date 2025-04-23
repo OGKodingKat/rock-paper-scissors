@@ -15,6 +15,7 @@ body {
   margin: 0;
   padding: 10px;
   transition: all 0.3s ease;
+  font-size: 2rem;
 }
 
 body.fade {
@@ -77,27 +78,43 @@ body.default, body.cotton, body.space, body.retro {
 
 /* ========== THEME SPECIFIC STYLES ========== */
 
-/* Default Theme */
+/* ========== DEFAULT CHALKBOARD THEME (Black & White) ========== */
 body.default {
-  font-family: sans-serif;
-  background: #ffffff;
-  color: #000000;
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
+  background-color: #1c1c1c; /* true blackboard feel */
+  color: #ffffff; /* white chalk */
 }
 
 body.default #rps-form {
-  background: #f0f0f0;
-  border: 2px solid #cccccc;
+  background: #2b2b2b;
+  border: 2px dashed #ffffff88;
+  box-shadow: inset 0 0 10px #ffffff22;
+  color: #ffffff;
 }
 
-body.default select, body.default button {
-  background-color: #ffffff;
-  border: 2px solid #333;
-  color: #000;
+body.default h2 {
+  color: #ffffff;
+  text-shadow: 1px 1px #000;
+}
+
+body.default select,
+body.default button {
+  background-color: #333333;
+  border: 2px dashed #ffffff;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+body.default button:hover {
+  background-color: #444444;
+  border-color: #ffffff;
 }
 
 body.default #results {
-  background: #e0e0e0;
-  color: #000;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px dashed #ffffff66;
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
 }
 
 /* Cotton Theme */
@@ -255,3 +272,4 @@ body.retro #results {
   background-color: #ddd;
   border-color: #333;
 }
+

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
 
   <link rel="stylesheet" href="styles.css"> 
   <title>Rock Paper Scissors Game - Choose Your Theme</title>
@@ -26,14 +28,25 @@
       <p>Click the button to play!</p>
       <p>Made with ❤️ by Cameron</p>  
     </div>
-    <div>
-      <h1>Scoreboard</h1>
-      <div id="scoreboard">
-        <div id="user-score" class="score">User Win: 0</div>
-        <div id="computer-score" class="score">Computer Win: 0</div>
-        <div id="draw-score" class="score">Draws: 0</div>
-        <div id="rounds-played" class="score">Rounds Played: 0</div>
+    <div id="scoreboard">
+      <div class="score user">
+        <span class="label">User Wins</span>
+        <span id="user-score" class="value">0</span>
+      </div>
+      <div class="score computer">
+        <span class="label">Computer Wins</span>
+        <span id="computer-score" class="value">0</span>
+      </div>
+      <div class="score draw">
+        <span class="label">Draws</span>
+        <span id="draw-score" class="value">0</span>
+      </div>
+      <div class="score rounds">
+        <span class="label">Rounds</span>
+        <span id="rounds-played" class="value">0</span>
+      </div>
     </div>
+    
       
     <form id="rps-form">
       <h2>Rock Paper Scissors</h2>
